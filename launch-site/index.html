@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Lingua Mundi — Japanese language tools</title>
+		<meta
+			name="description"
+			content="Shikibu, the EPUB editor for Japanese, and the Lingua Mundi dictionary API."
+		/>
+		<link rel="icon" type="image/png" href="favicon.png" />
+		<meta property="og:title" content="Lingua Mundi / Shikibu" />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://rhls-softdev.github.io/lingua-mundi-launch/" />
+		<meta property="og:image" content="https://rhls-softdev.github.io/lingua-mundi-launch/og-image.png" />
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:image" content="https://rhls-softdev.github.io/lingua-mundi-launch/og-image.png" />
+		<link rel="canonical" href="https://rhls-softdev.github.io/lingua-mundi-launch/" />
+		
+		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "WebApplication",
+			"name": "Lingua Mundi / Shikibu",
+			"description": "Japanese dictionary API and EPUB editor.",
+			"url": "https://rhls-softdev.github.io/lingua-mundi-launch/dashboard/",
+			"applicationCategory": "UtilityApplication"
+		}
+		</script>
+		<link rel="stylesheet" href="styles.css" />
+	</head>
+	<body>
+		<header class="topbar">
+			<img src="rhls-logo-sm.png" alt="RHLS" class="topbar-logo" />
+			<span class="brand">Lingua Mundi</span>
+			<nav>
+				<a href="#products" data-i18n="lm.nav.products">Products</a>
+				<a href="#contact" data-i18n="lm.nav.contact">Contact</a>
+			</nav>
+		</header>
+
+		<section class="hero">
+			<h1><span data-i18n="lm.hero.title">Japanese language tools, built on real dictionary data</span></h1>
+			<p data-i18n="lm.hero.sub">
+				Two products, one engine: Shikibu, the EPUB editor for
+				reading and annotating Japanese books, and the Lingua Mundi
+				API, a dictionary and linguistic-data service backed by JMdict, WordNet,
+				KANJIDIC2, and J-UniMorph.
+			</p>
+			<div class="hero-actions">
+				<a class="btn btn-primary" href="#products" data-i18n="lm.hero.cta">See the products</a>
+			</div>
+		</section>
+
+		<main id="products" class="products">
+			<article class="card">
+				<h2 data-i18n="lm.card.shikibu.title">Shikibu</h2>
+				<p class="tag" data-i18n="lm.card.shikibu.tag">EPUB editor · Android app + desktop source</p>
+				<p data-i18n="lm.card.shikibu.body">
+					Open a Japanese EPUB, add furigana with one click, annotate vocabulary
+					and grammar, run linguistic search across the whole book, and export a
+					clean, spec-compliant EPUB. Pro includes a full offline dictionary
+					powered by the Lingua Mundi database.
+				</p>
+				<div class="card-actions">
+					<a class="btn btn-primary" href="#" id="shikibu-download" data-i18n="lm.card.shikibu.cta">Download Shikibu</a>
+				</div>
+			</article>
+
+			<article class="card">
+				<h2 data-i18n="lm.card.api.title">Lingua Mundi API</h2>
+				<p class="tag" data-i18n="lm.card.api.tag">Dictionary &amp; linguistic data as a service</p>
+				<p data-i18n="lm.card.api.body">
+					Look up words, get furigana, deinflections, senses, kanji data, and
+					inflection paradigms through a simple HTTP API. Free access today; a
+					paid Pro plan with API keys is on the roadmap.
+				</p>
+				<div class="card-actions">
+					<a class="btn btn-primary" href="#" id="api-dashboard" data-i18n="lm.card.api.cta">Open the dashboard</a>
+				</div>
+			</article>
+			<article class="card">
+				<h2 data-i18n="lm.card.android.title">Shikibu on Android</h2>
+				<p class="tag" data-i18n="lm.card.android.tag">Companion EPUB reader/annotator</p>
+				<p data-i18n="lm.card.android.body">
+					The Shikibu EPUB editor as an Android companion app — open, annotate,
+					and add furigana to Japanese EPUBs on your phone. Sideload the APK.
+				</p>
+				<div class="card-actions">
+					<a class="btn btn-primary" id="apk-download" href="https://github.com/RHLS-softdev/lingua-mundi-launch/releases/latest/download/Shikibu-1.0.0-android.apk" data-i18n="lm.card.android.cta">Download Android APK</a>
+				</div>
+			</article>
+		</main>
+
+		<section id="contact" class="contact">
+			<h2 data-i18n="lm.contact.title">Contact</h2>
+			<p><span data-i18n="lm.contact.body">Questions or feedback: rhls.softdev@gmail.com</span></p>
+		</section>
+
+		<footer>
+			<p><span data-i18n="lm.footer">© 2026 Lingua Mundi · rhls.softdev@gmail.com</span></p>
+		</footer>
+
+		<script>
+			document.getElementById("apk-download").href =
+				"https://github.com/RHLS-softdev/lingua-mundi-launch/releases/latest/download/Shikibu-1.0.0-android.apk";
+			// Direct permanent URLs (GitHub Pages + release assets).
+			const SHIKIBU_URL = "https://github.com/RHLS-softdev/lingua-mundi-launch/releases/latest/download/Shikibu-1.0.0-LinguaMundi-1.0.0-Japanese.zip";
+			const API_DASHBOARD_URL = "https://rhls-softdev.github.io/lingua-mundi-launch/dashboard/";
+			document.getElementById("shikibu-download").href = SHIKIBU_URL;
+			document.getElementById("api-dashboard").href = API_DASHBOARD_URL;
+		</script>
+		<div class="lang-bar">
+			<label for="lang-select">🌐</label>
+			<select id="lang-select" aria-label="Language"></select>
+		</div>
+		<script src="localize/i18n-site.js"></script>
+		<script>
+			var switcher = document.getElementById("lang-select");
+			window.i18n.init({
+				renderSwitcher: function (locales, current, switchTo) {
+					Object.keys(locales).forEach(function (tag) {
+						var opt = document.createElement("option");
+						opt.value = tag; opt.textContent = locales[tag].name;
+						opt.selected = tag === current;
+						switcher.appendChild(opt);
+					});
+					switcher.addEventListener("change", function () { switchTo(switcher.value); });
+				}
+			});
+		</script>
+	</body>
+</html>
